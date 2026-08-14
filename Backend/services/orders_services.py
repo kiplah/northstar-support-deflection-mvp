@@ -2,11 +2,7 @@ import json
 from pathlib import Path
 
 
-DATA_FILE = (
-    Path(__file__).parent.parent
-    / "test_data" ##i have to change this once sawie finishes her task
-    / "orders.json"
-)
+DATA_FILE = Path(__file__).resolve().parents[2] / "data" / "orders.json"
 
 
 def load_orders():

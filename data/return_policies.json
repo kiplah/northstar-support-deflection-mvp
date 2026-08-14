@@ -2,16 +2,43 @@
   {
     "category": "Electronics",
     "return_window_days": 30,
-    "refund_rule": "Full refund if unopened, 15% restocking fee if opened."
+    "refund_rule": "Full refund if unopened; 15% restocking fee if opened.",
+    "refund_method": "Original payment method",
+    "reasons_allowed": ["Defective", "Damaged in transit", "Wrong item", "Not as described"]
   },
   {
     "category": "Accessories",
     "return_window_days": 15,
-    "refund_rule": "Full refund."
+    "refund_rule": "Full refund for unused items; store credit for opened accessories.",
+    "refund_method": "Original payment method or store credit",
+    "reasons_allowed": ["Defective", "Damaged in transit", "Wrong item", "Changed mind"]
+  },
+  {
+    "category": "Home Goods",
+    "return_window_days": 14,
+    "refund_rule": "Full refund if item is unused and in original packaging.",
+    "refund_method": "Original payment method",
+    "reasons_allowed": ["Defective", "Damaged in transit", "Wrong item", "Changed mind"]
+  },
+  {
+    "category": "Apparel",
+    "return_window_days": 21,
+    "refund_rule": "Full refund for unworn items with tags attached; sale items are final sale.",
+    "refund_method": "Original payment method",
+    "reasons_allowed": ["Wrong size", "Wrong item", "Damaged in transit", "Changed mind"]
   },
   {
     "category": "Software",
     "return_window_days": 0,
-    "refund_rule": "Non-refundable once digital key is revealed."
+    "refund_rule": "Non-refundable once digital key is revealed or activated.",
+    "refund_method": "Store credit only for eligible billing disputes",
+    "reasons_allowed": ["Defective", "Billing issue"]
+  },
+  {
+    "category": "Beauty",
+    "return_window_days": 10,
+    "refund_rule": "Refund only for unopened products; opened items can be exchanged if sealed and unused.",
+    "refund_method": "Original payment method",
+    "reasons_allowed": ["Damaged in transit", "Wrong item", "Defective", "Changed mind"]
   }
 ]
