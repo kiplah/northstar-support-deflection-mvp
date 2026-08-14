@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-import sqlite3
+from services.intent_router import route_intent
 
 app = Flask(__name__)
 
@@ -14,14 +14,12 @@ def chat():
     data = request.json
     user_message = data.get("message", "")
     
-    # Placeholder for intent routing
-    # 1. Classify if order status, returns, or other
-    # 2. Call the respective service (order_service or returns_service)
-    # 3. Return the response
+    # Use the router to determine intent and response
+    result = route_intent(user_message)
     
     return jsonify({
-        "response": f"Echo: You said '{user_message}'. (Backend integration pending)", 
-        "intent": "unknown"
+        "response": result["response"], 
+        "intent": result["intent"]
     })
 
 if __name__ == '__main__':
