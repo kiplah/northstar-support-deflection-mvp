@@ -18,9 +18,14 @@ python -m venv venv
 ```
 
 ### 3. Activate the Virtual Environment
-- **On Windows (Command Prompt or PowerShell):**
-  ```bash
-  .\venv\Scripts\activate
+- **On Windows (PowerShell):**
+  ```powershell
+  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+  .\venv\Scripts\Activate.ps1
+  ```
+- **On Windows (Command Prompt):**
+  ```bat
+  .\venv\Scripts\activate.bat
   ```
 - **On Mac/Linux:**
   ```bash
