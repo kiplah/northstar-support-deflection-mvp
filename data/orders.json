@@ -1,0 +1,7 @@
+[
+  { "order_id": "ORD-1001", "item": "Wireless Headphones", "status": "Shipped", "ship_date": "2023-10-25" },
+  { "order_id": "ORD-1002", "item": "Mechanical Keyboard", "status": "Processing", "ship_date": "Pending" },
+  { "order_id": "ORD-1003", "item": "USB-C Hub", "status": "Delivered", "ship_date": "2023-10-20" },
+  { "order_id": "ORD-1004", "item": "Gaming Mouse", "status": "Cancelled", "ship_date": "N/A" },
+  { "order_id": "ORD-1005", "item": "Laptop Stand", "status": "Shipped", "ship_date": "2023-10-26" }
+]

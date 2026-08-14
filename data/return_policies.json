@@ -1,0 +1,17 @@
+[
+  {
+    "category": "Electronics",
+    "return_window_days": 30,
+    "refund_rule": "Full refund if unopened, 15% restocking fee if opened."
+  },
+  {
+    "category": "Accessories",
+    "return_window_days": 15,
+    "refund_rule": "Full refund."
+  },
+  {
+    "category": "Software",
+    "return_window_days": 0,
+    "refund_rule": "Non-refundable once digital key is revealed."
+  }
+]
