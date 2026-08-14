@@ -25,7 +25,7 @@ This MVP provides an automated, self-serve chat interface designed to deflect tw
 To pick this up and transition it to a production environment, Northstar's team should execute the following steps:
 
 1. **Environment Setup**: 
-   - Pull the repository: `git clone <repo-url>`
+   - Pull the repository: `git clone <https://github.com/kiplah/northstar-support-deflection-mvp.git>`
    - Install dependencies: `pip install -r requirements.txt`
    - Run the development server: `python app.py`
 2. **Backend Integration**: Replace the JSON reads in `services/order_service.py` and `services/returns_service.py` with API calls to the Northstar OMS database.
