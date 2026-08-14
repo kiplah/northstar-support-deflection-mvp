@@ -84,6 +84,10 @@
     align-items: flex-end;
   }
 
+  .msg.bot {
+    align-items: flex-start;
+  }
+
   .msg__bubble {
     max-width: 85%;
     background: var(--bubble);
@@ -94,6 +98,12 @@
     border-radius: 16px 16px 4px 16px;
     white-space: pre-wrap;
     word-wrap: break-word;
+  }
+
+  .msg.bot .msg__bubble {
+    background: #e2e8f0;
+    color: #1e293b;
+    border-radius: 16px 16px 16px 4px;
   }
 
   .msg__time {
@@ -221,7 +231,7 @@
   const feed      = document.getElementById('feed');
   const emptyState = document.getElementById('empty-state');
 
-  const messages = []; // in-memory log: [{ text, timestamp }, ...]
+  const messages = []; // in-memory log: [{ text, timestamp, sender }, ...]
 
   function formatTimestamp(date) {
     return date.toLocaleString(undefined, {
@@ -233,7 +243,7 @@
     if (emptyState) emptyState.remove();
 
     const row = document.createElement('div');
-    row.className = 'msg';
+    row.className = entry.sender === 'user' ? 'msg' : 'msg bot';
 
     const bubble = document.createElement('div');
     bubble.className = 'msg__bubble';
@@ -249,26 +259,51 @@
     feed.scrollTop = feed.scrollHeight;
   }
 
-  function saveEntry(entry) {
-    // Swap this for a real request when wiring up a backend, e.g.:
-    // fetch('/api/feedback', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ text: entry.text, timestamp: entry.timestamp.toISOString() })
-    // });
+  async function saveEntry(userMessage) {
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userMessage })
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      return data.response;
+    } catch (error) {
+      console.error('Error sending message:', error);
+      return 'Sorry, there was an error processing your message. Please try again.';
+    }
   }
 
-  function sendMessage() {
+  async function sendMessage() {
     const text = textarea.value.trim();
     if (!text) return;
 
-    const entry = { text, timestamp: new Date() };
-    saveEntry(entry);
-    messages.push(entry);
-    renderMessage(entry);
+    // Disable input while processing
+    sendBtn.disabled = true;
+    textarea.disabled = true;
 
+    // Add user message to chat
+    const userEntry = { text, timestamp: new Date(), sender: 'user' };
+    messages.push(userEntry);
+    renderMessage(userEntry);
+
+    // Send to backend and get response
+    const botResponse = await saveEntry(text);
+    
+    // Add bot response to chat
+    const botEntry = { text: botResponse, timestamp: new Date(), sender: 'bot' };
+    messages.push(botEntry);
+    renderMessage(botEntry);
+
+    // Reset input
     textarea.value = '';
     textarea.style.height = 'auto';
+    textarea.disabled = false;
     sendBtn.disabled = true;
     textarea.focus();
   }
