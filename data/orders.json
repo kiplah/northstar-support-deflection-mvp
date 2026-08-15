@@ -1,20 +1,128 @@
 [
-  { "order_id": "ORD-1001", "customer_name": "Ava Thompson", "item": "Wireless Headphones", "status": "Shipped", "ship_date": "2026-08-01" },
-  { "order_id": "ORD-1002", "customer_name": "Liam Johnson", "item": "Mechanical Keyboard", "status": "Processing", "ship_date": "Pending" },
-  { "order_id": "ORD-1003", "customer_name": "Sophia Martinez", "item": "USB-C Hub", "status": "Delivered", "ship_date": "2026-07-29" },
-  { "order_id": "ORD-1004", "customer_name": "Noah Wilson", "item": "Gaming Mouse", "status": "Cancelled", "ship_date": "N/A" },
-  { "order_id": "ORD-1005", "customer_name": "Emma Davis", "item": "Laptop Stand", "status": "Shipped", "ship_date": "2026-08-02" },
-  { "order_id": "ORD-1006", "customer_name": "James Brown", "item": "4K Monitor", "status": "Processing", "ship_date": "Pending" },
-  { "order_id": "ORD-1007", "customer_name": "Olivia Garcia", "item": "Smartwatch", "status": "Delivered", "ship_date": "2026-07-26" },
-  { "order_id": "ORD-1008", "customer_name": "Benjamin Lee", "item": "Bluetooth Speaker", "status": "Out for Delivery", "ship_date": "2026-08-04" },
-  { "order_id": "ORD-1009", "customer_name": "Mia Rodriguez", "item": "Office Chair", "status": "Pending", "ship_date": "Pending" },
-  { "order_id": "ORD-1010", "customer_name": "Lucas Walker", "item": "Tablet Case", "status": "Cancelled", "ship_date": "N/A" },
-  { "order_id": "ORD-1011", "customer_name": "Charlotte Hall", "item": "Noise-Canceling Earbuds", "status": "Shipped", "ship_date": "2026-08-03" },
-  { "order_id": "ORD-1012", "customer_name": "Henry Allen", "item": "Webcam", "status": "Delivered", "ship_date": "2026-07-22" },
-  { "order_id": "ORD-1013", "customer_name": "Isabella Young", "item": "Portable SSD", "status": "Processing", "ship_date": "Pending" },
-  { "order_id": "ORD-1014", "customer_name": "Ethan Hernandez", "item": "Monitor Arm", "status": "Shipped", "ship_date": "2026-08-05" },
-  { "order_id": "ORD-1015", "customer_name": "Amelia King", "item": "Desk Lamp", "status": "Delivered", "ship_date": "2026-07-19" },
-  { "order_id": "ORD-1016", "customer_name": "Michael Scott", "item": "Wireless Charger", "status": "Pending", "ship_date": "Pending" },
-  { "order_id": "ORD-1017", "customer_name": "Harper Green", "item": "External Hard Drive", "status": "Out for Delivery", "ship_date": "2026-08-06" },
-  { "order_id": "ORD-1018", "customer_name": "Daniel Baker", "item": "Thermal Printer", "status": "Cancelled", "ship_date": "N/A" }
+  {
+    "order_id": "ORD-1001",
+    "customer_name": "Ava Thompson",
+    "item": "Wireless Headphones",
+    "status": "Shipped",
+    "ship_date": "2026-08-01"
+  },
+  {
+    "order_id": "ORD-1002",
+    "customer_name": "Liam Johnson",
+    "item": "Mechanical Keyboard",
+    "status": "Processing",
+    "ship_date": "Pending"
+  },
+  {
+    "order_id": "ORD-1003",
+    "customer_name": "Sophia Martinez",
+    "item": "USB-C Hub",
+    "status": "Delivered",
+    "ship_date": "2026-07-29"
+  },
+  {
+    "order_id": "ORD-1004",
+    "customer_name": "Noah Wilson",
+    "item": "Gaming Mouse",
+    "status": "Cancelled",
+    "ship_date": "N/A"
+  },
+  {
+    "order_id": "ORD-1005",
+    "customer_name": "Emma Davis",
+    "item": "Laptop Stand",
+    "status": "Shipped",
+    "ship_date": "2026-08-02"
+  },
+  {
+    "order_id": "ORD-1006",
+    "customer_name": "James Brown",
+    "item": "4K Monitor",
+    "status": "Processing",
+    "ship_date": "Pending"
+  },
+  {
+    "order_id": "ORD-1007",
+    "customer_name": "Olivia Garcia",
+    "item": "Smartwatch",
+    "status": "Delivered",
+    "ship_date": "2026-07-26"
+  },
+  {
+    "order_id": "ORD-1008",
+    "customer_name": "Benjamin Lee",
+    "item": "Bluetooth Speaker",
+    "status": "Out for Delivery",
+    "ship_date": "2026-08-04"
+  },
+  {
+    "order_id": "ORD-1009",
+    "customer_name": "Mia Rodriguez",
+    "item": "Office Chair",
+    "status": "Pending",
+    "ship_date": "Pending"
+  },
+  {
+    "order_id": "ORD-1010",
+    "customer_name": "Lucas Walker",
+    "item": "Tablet Case",
+    "status": "Cancelled",
+    "ship_date": "N/A"
+  },
+  {
+    "order_id": "ORD-1011",
+    "customer_name": "Charlotte Hall",
+    "item": "Noise-Canceling Earbuds",
+    "status": "Shipped",
+    "ship_date": "2026-08-03"
+  },
+  {
+    "order_id": "ORD-1012",
+    "customer_name": "Henry Allen",
+    "item": "Webcam",
+    "status": "Delivered",
+    "ship_date": "2026-07-22"
+  },
+  {
+    "order_id": "ORD-1013",
+    "customer_name": "Isabella Young",
+    "item": "Portable SSD",
+    "status": "Processing",
+    "ship_date": "Pending"
+  },
+  {
+    "order_id": "ORD-1014",
+    "customer_name": "Ethan Hernandez",
+    "item": "Monitor Arm",
+    "status": "Shipped",
+    "ship_date": "2026-08-05"
+  },
+  {
+    "order_id": "ORD-1015",
+    "customer_name": "Amelia King",
+    "item": "Desk Lamp",
+    "status": "Delivered",
+    "ship_date": "2026-07-19"
+  },
+  {
+    "order_id": "ORD-1016",
+    "customer_name": "Michael Scott",
+    "item": "Wireless Charger",
+    "status": "Pending",
+    "ship_date": "Pending"
+  },
+  {
+    "order_id": "ORD-1017",
+    "customer_name": "Harper Green",
+    "item": "External Hard Drive",
+    "status": "Out for Delivery",
+    "ship_date": "2026-08-06"
+  },
+  {
+    "order_id": "ORD-1018",
+    "customer_name": "Daniel Baker",
+    "item": "Thermal Printer",
+    "status": "Cancelled",
+    "ship_date": "N/A"
+  }
 ]
