@@ -1,10 +1,11 @@
-import pytest
+import pytest  # type: ignore[import-not-found]
 from app import app
 
 @pytest.fixture
 def client():
     app.config["TESTING"] = True
     with app.test_client() as client:
+        
         yield client
 
 def test_order_status_1(client):

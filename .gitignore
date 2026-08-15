@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pycache
 __pycache__/
 *.py[cod]
@@ -32,3 +33,7 @@ venv.bak/
 *.swo
 *~
 .DS_Store
+=======
+__pycache__/
+*.pyc
+>>>>>>> b7c22e21e1e869473e176446568f9fbb9b452e40

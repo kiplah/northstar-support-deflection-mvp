@@ -67,21 +67,59 @@ def route_intent(user_message):
             "Billing issue"
         ]
 
+        # Common products mapped to their dataset category.
+        # This allows natural messages such as:
+        # "I want to return my headphones because they are defective."
+        product_categories = {
+            "headphones": "Electronics",
+            "earbuds": "Electronics",
+            "keyboard": "Electronics",
+            "mouse": "Electronics",
+            "monitor": "Electronics",
+            "smartwatch": "Electronics",
+            "speaker": "Electronics",
+            "charger": "Electronics",
+            "webcam": "Electronics",
+            "ssd": "Electronics",
+            "hard drive": "Electronics",
+            "usb-c hub": "Electronics",
+            "tablet": "Electronics",
+            "laptop": "Electronics",
+
+            "phone case": "Accessories",
+            "tablet case": "Accessories",
+            "laptop stand": "Accessories",
+            "monitor arm": "Accessories",
+
+            "chair": "Home Goods",
+            "office chair": "Home Goods",
+            "desk lamp": "Home Goods"
+        }
+
         category = None
         reason = None
 
-        # Find category in the user's message
+        # First look for an exact category.
         for item in categories:
             if item.lower() in message_lower:
                 category = item
                 break
 
-        # Find reason in the user's message
+        # If no category was found, look for a known product.
+        if category is None:
+            for product, product_category in product_categories.items():
+                if product in message_lower:
+                    category = product_category
+                    break
+
+        # Find the reason.
         for item in reasons:
             if item.lower() in message_lower:
                 reason = item
                 break
 
+        # If both category and reason were found,
+        # send them to the return service.
         if category and reason:
             result = check_return_eligibility(
                 category,
